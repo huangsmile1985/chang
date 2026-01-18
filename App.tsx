@@ -29,7 +29,7 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#fdfcfb]">
-      {/* Header - 保持不变 */}
+      {/* Header */}
       <header className="bg-white border-b border-gray-100 py-12 px-6 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
@@ -40,6 +40,7 @@ const App: React.FC = () => {
               {t.subtitle}
             </p>
           </div>
+          
           <button 
             onClick={toggleLanguage}
             className="px-4 py-1 border border-gray-300 text-xs text-gray-500 hover:bg-gray-50 transition-colors tracking-widest"
@@ -49,7 +50,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* Main Content - 保持不变 */}
+      {/* Main Content */}
       <main className="flex-grow max-w-6xl mx-auto px-6 py-12 w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {currentItems.map((carpet) => (
@@ -78,7 +79,7 @@ const App: React.FC = () => {
           ))}
         </div>
 
-        {/* Pagination - 保持不变 */}
+        {/* Pagination */}
         <div className="mt-16 flex flex-col items-center gap-6">
           <div className="flex items-center gap-8">
             <button
@@ -90,9 +91,11 @@ const App: React.FC = () => {
             >
               {t.prevPage}
             </button>
+            
             <span className="text-sm text-gray-400 tracking-widest">
               {t.pageOf.replace('{current}', currentPage.toString()).replace('{total}', totalPages.toString())}
             </span>
+
             <button
               onClick={() => goToPage(currentPage + 1)}
               disabled={currentPage === totalPages}
@@ -106,7 +109,7 @@ const App: React.FC = () => {
         </div>
       </main>
 
-      {/* Footer - 此处已更新你的联系信息 */}
+      {/* Footer - 此处已填入您的最新联系信息 */}
       <footer className="bg-[#f2f2f2] border-t border-gray-200 py-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
           <div className="space-y-4">
@@ -114,21 +117,18 @@ const App: React.FC = () => {
               {t.contactTitle}
             </h4>
             <div className="flex flex-col gap-3 text-sm text-gray-500 font-light">
-              {/* 修改后的邮箱 */}
               <p className="flex items-center gap-2">
                 <span className="font-normal text-gray-400 w-16">{t.email}:</span>
                 <a href="mailto:huangsmile1985@gmail.com" className="hover:text-gray-800 transition-colors underline">
                   huangsmile1985@gmail.com
                 </a>
               </p>
-              {/* 修改后的电话 */}
               <p className="flex items-center gap-2">
                 <span className="font-normal text-gray-400 w-16">{t.phone}:</span>
                 <a href="tel:+8615620656792" className="hover:text-gray-800 transition-colors underline">
                   +86 15620656792
                 </a>
               </p>
-              {/* 修改后的 WhatsApp */}
               <p className="flex items-center gap-2">
                 <span className="font-normal text-gray-400 w-16">WhatsApp:</span>
                 <a 
